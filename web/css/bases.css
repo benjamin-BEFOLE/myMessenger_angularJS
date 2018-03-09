@@ -1,2 +1,38 @@
-﻿body {
+﻿ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
+
+a {
+	text-decoration: none;
+}
+
+textarea {
+	resize: none;
+	vertical-align: middle;
+}
+
+input:focus {
+	outline: none;
+}
+
+/*HEADER*/
+	header {
+		background: #1F1E1D;
+		height: auto;
+		overflow: hidden;
+		font-family: Andale Mono, monospace;
+	}
+
+/*BODY*/
+	/*.body {
+		margin: 0;
+		background-image: url("/web/img/theme/footer_lodyas.png");
+	}*/
+
+	body {
+		margin: 0;
+	}
+
+

@@ -1,2 +1,433 @@
-﻿body {
+﻿/*GLOBAL*/
+.l-centered {
+	max-width: 900px;
+	overflow: hidden;
+}
+
+.l-left {
+	display: block;
+	float: left;
+}
+
+.l-right {
+	display: block;
+	float: right;
+}
+
+/*GLOBAL-FOOTER*/
+.l-wrap-footer {
+	background-color: #484848;
+}
+
+/*ACCUEIL-HEADER*/
+.l-navig {
+	width: 100%;
+	height: 50px;
+}
+
+.l-navbar-left {
+	float: left;
+	width: 390px;
+	height: 100%;
+	margin-right: calc(100% - 672px);
+	text-align: left;
+	color: white;
+}
+
+.l-navbar-right {
+	float: left;
+	width: 282px;
+	height: 100%;
+	margin: auto;
+	text-align: right;
+	color: white;
+}
+
+.l-navbar-horiz {
+	float: left;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.l-wrap-button-header {
+	float: left;
+	margin: 8px 12px;
+}
+
+.l-wrap-icon-header {
+	display: inline-block;
+	margin: 9px 10px;
+}
+
+.l-menu {
+	position: absolute;
+	left: 0px;
+	top: 50px;
+	width: 100vw;
+	overflow: hidden;
+	background-color: #333
+}
+
+.l-list-menu {
+	padding: 4px 0;
+	height: 35px;
+	line-height: 26px;
+	border-style: solid;
+	border-width: 0 0 1px 0;
+	border-color: #87909D;
+	background-color: rgba(42, 39, 44, 0.65);
+}
+
+/*ACCUEIL-BODY*/
+.l-wrap-accueil {
+	display: table-cell; 
+	vertical-align: middle;
+	width: 100vw;
+	height: calc(100vh - 100px);
+	background-image: url("/web/img/theme/footer_lodyas.png");
+}
+
+
+
+
+
+
+
+
+.l-top-right {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+
+.l-wrap-submit-form {
+	margin: 0 0 10px 0;
+	overflow: hidden;
+}
+
+
+/*CONNEXION ET INSCRIPTION*/
+.l-centered-block {
+	width: 100%;
+	text-align: center;
+}
+
+.l-wrap-login {
+	display: table-cell; 
+	vertical-align: middle;
+	width: 100vw;
+	height: calc(100vh - 100px);
+	background-image: url("/web/img/theme/footer_lodyas.png");
+}
+
+.l-centered-login {
+	max-width: 768px;
+	overflow: hidden;
+}
+
+.l-login-wrap-logo {
+	display: table-cell;
+	width: 200px;
+	background-color: rgba(226, 212, 214, 0.5);
+}
+
+.l-login-wrap-form {
+	background-color: rgba(42, 39, 44, 0.5);
+}
+
+/*USER-PROFIL*/
+.l-wrap-grey {
+	padding: 20px 0 0 0;
+	background-color: rgba(42, 39, 44, 0.5);
+	overflow: hidden;
+}
+
+.l-profil-content-img {
+	position: relative;
+}
+
+/*USER-HOME*/
+.l-home-wrap {
+	width: 100vw;
+	overflow: hidden;
+}
+
+.l-home-wrap-left {
+	float: left;
+	width: 360px;
+	height: 100vh;
+}
+
+.l-home-wrap-right {
+	float: left;
+	width: calc(100% - 360px);
+	height: 100vh;
+	border-style: solid;
+	border-color: #C9C9C9;
+	border-width: 0 0 0 2px;
+}
+
+.l-home-wrap-right::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: calc(100% - 360px);
+	height: 100vh;
+	background-image: url("/myMessenger/img/theme/congruent_outline.png");
+	opacity: 0.9;
+	z-index: -1;
+}
+
+	/*USER-HEADER-HOME*/
+	.l-wrap-header-home {
+		width: 100%;
+		height: 60px;
+		padding: 5px 15px 4px 15px;
+		border-style: solid;
+		border-color: #C9C9C9;
+		border-width: 0 0 1px 0;
+		background-color: #EEEEEE;
+	}
+
+	.l-wrap-header-avatar {
+		float: left;
+		width: 40px;
+		height: 40px;
+		margin: 5px;
+		border-radius: 20px;
+	}
+
+	.l-user-list-menu {
+		display: none;
+		position: absolute;
+		left: 0;
+		top: 60px;
+		width: 360px;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+	}
+
+	.l-user-elm-menu {
+		width: 100%;
+		height: 35px;
+		padding: 4px 0;
+		line-height: 26px;
+		border-style: solid;
+		border-width: 0 0 1px 0;
+		border-color: #87909D;
+		background-color: rgba(42, 39, 44, 0.8);
+	}
+
+
+	/*USER-CHAT*/
+	.l-wrap-search {
+		width: 100%;
+		height: 50px;
+		border-style: solid;
+		border-color: #E2E2E2;
+		border-width: 0 0 1px 0;
+		background-color: #F5F5F5;
+	}
+
+	.l-search {
+		display: inline-block;
+		width: 330px;
+		height: 30px;
+		margin: 10px 15px 9px 15px;
+		border-radius: 3px;
+		background-color: white;
+		vertical-align: middle;
+	}
+
+	.l-wrap-nav-chat {
+		width: 100%;
+		height: calc(100vh - 110px);
+		background-color: rgba(42, 39, 44, 0.85);
+		overflow: scroll;
+	}
+
+	.l-wrap-chat {
+		width: 100%;
+		height: 81px;
+		overflow: hidden;
+	}
+
+	.l-wrap-chat-avatar {
+		float: left;
+		width: 60px;
+		height: 60px;
+		margin: 10px;
+	}
+	
+	/*USER-MSG-SCREEN*/
+	.l-wrap-msg-screen {
+		position: relative;
+		width: 100%;
+		height: calc(100vh - 110px);
+		margin-bottom: 50px;
+	}
+
+	.l-wrap-msg {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		max-height: 100%;
+		padding-bottom: 5px;
+		overflow: scroll;
+	}
+
+	.l-print-msg-emitted {
+		position: relative;
+		width: calc(100% - 40px);
+		/*height: 100px;*/
+		height: auto;
+		margin: 5px 20px;
+		text-align: right;
+	}
+
+	.l-print-msg-received {
+		position: relative;
+		width: calc(100% - 40px);
+		/*height: 100px;*/
+		height: auto;
+		margin: 5px 20px;
+		text-align: left;
+	}
+
+	.l-msg-time {
+		width: 100%;
+		height: auto;
+		margin: 10px 0;
+		text-align: center;
+	}
+
+	.l-msg-non-lu {
+		width: 100%;
+		height: auto;
+		margin: 10px 0;
+		background-color: rgba(255, 255, 255, 0.3);
+		text-align: center;
+	}
+
+	/*USER-FOOTER*/
+	.user-footer-home {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		height: 0;
+	}
+
+	.l-wrap-send-msg {
+		position: absolute;
+		bottom: 0px;
+		right: 0;
+		width: calc(100vw - 362px);
+		height: 50px;
+		margin-left: 2px;
+		background-color: #EEEEEE;
+		/*overflow: hidden;*/
+	}
+
+	.l-msg {
+		position: absolute;
+		bottom: 0;
+		min-height: 30px;
+		width: calc(100% - 30px);
+		margin: 10px 15px;
+	}
+
+
+@media screen and (max-width: 767px) {
+	/*GLOBAL-BODY*/
+	.l-centered {
+		width: 100%;
+	}
+
+	.l-centered-login {
+		width: 100%;
+	}
+
+	/*MENU DE NAVIGATION*/
+	.l-navbar-left {
+		width: 50px;
+		margin-right: calc(100% - 100px);
+	}
+
+	.l-navbar-right {
+		width: 50px;
+		margin: auto;
+	}
+	
+	/*CONNEXION ET INSCRIPTION*/
+	.l-login-wrap-logo {
+		display: none;
+	}
+
+	.l-login-wrap-form {
+		width: 100vw;
+	}
+
+	/*USER PROFIL*/
+	.l-profil-content-img {
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	/*USER-HOME*/
+	.l-home-wrap {
+		width: 767px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	/*GLOBAL-BODY*/
+	.l-centered {
+		margin: auto;
+	}
+	
+	/*ACCUEIL-HEADER*/
+	.l-navbar-left {
+		width: 390px;
+		margin-right: calc(100% - 661px);
+	}
+
+	.l-navbar-right {
+		width: 271px;
+		margin: auto;
+	}
+	
+	/*CONNEXION ET INSCRIPTION*/
+	.l-centered-login {
+		margin: auto;
+		border-radius: 4px;
+	}
+
+	.l-login-wrap-logo {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.l-login-wrap-form {
+		display: table-cell;
+	}
+
+	.l-login-form {
+		width: 568px;
+	}
+
+	/*USER PROFIL*/
+	.l-profil-wrap-img {
+		float: left;
+		width: 130px;
+	}
+
+	.l-profil-wrap-form {
+		float: left;
+		width: calc(100% - 180px);
+	}
 }

@@ -1,9 +1,58 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title></title>
-    </head>
-    <body>
-    </body>
-</html>
+﻿<!-- HEADER -->
+<header>
+	<div class="l-centered-block">
+		<a class="button-icon th-link-grey" href="#accueil"><i class="icon-home"></i></a>
+	</div>
+</header>
+
+<!-- BODY -->
+<div class="l-wrap-login">
+	<div class="l-centered-login">
+		<div class="l-login-wrap-logo">
+			<div class="container-fluid">
+				<img class="login-logo" src="/web/img/theme/paper-plane.png">
+				<h1 class="login-title-logo">INSCRIPTION</h1>
+			</div>
+		</div>
+		<div class="l-login-wrap-form">
+			<div class="container-fluid l-login-form">
+				<h2 class="title-form">CRÉER UN COMPTE</h2> 
+				<form method="post">
+					<div class="champ-form my-check-email">
+						<label class="label-form">EMAIL</label>
+						<input class="input-form {{emailClass}}" type="text" autocomplete='email' ng-model="email">
+						<span class="error-message th-warning">{{emailError}}</span>
+					</div>
+					<div class="champ-form my-check-user-name">
+						<label class="label-form">NOM D'UTILISATEUR</label>
+						<input class="input-form {{userNameClass}}" type="text" autocomplete='userName' ng-model="userName">
+						<span class="error-message th-warning">{{userNameError}}</span>
+					</div>
+					<div class="champ-form my-check-password">
+						<label class="label-form">MOT DE PASSE</label>
+						<input class="input-form {{passwordClass}}" type="text" autocomplete='password' ng-model="password">
+						<span class="error-message th-warning">{{passwordError}}</span>
+					</div>
+					<div class="l-wrap-submit-form">
+						<button class="button button-lg th-button-blue" ng-click="sendForm()">CONTINUER</button>
+					</div>
+					<div class="text-form">
+						En vous inscrivant vous acceptez les <a class="th-link-white" href="#">Conditions d'Utilisation</a> et la <a class="th-link-white" href="#">Politique de Confidentialité</a> de ce site.
+					</div>
+					<div class="text-form">
+						Vous avez déjè un compte? <a class="th-link-white" href="#connexion">Se connecter</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="l-wrap-footer">
+	<div class="l-centered ">
+		<div class="container-fluid footer-accueil">
+			Icons made by <a href="https://www.flaticon.com/authors/plainicon" title="Plainicon">Plainicon</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+		</div>
+	</div>
+</footer>

@@ -1,2 +1,83 @@
-﻿body {
+﻿/*COLOR*/
+.th-border-warning, .th-border-warning:focus {
+	border-color: #FF9800;
 }
+
+.th-warning {
+	color: #FF9800;
+}
+
+.th-error {
+	color: #F44336;
+}
+
+.th-grey {
+	color: #A0A0A0;
+}
+
+/*LINK*/
+.th-link-white, .th-link-white:hover, .th-link-white:focus {
+	color: #E9E9E9
+}
+
+.th-link-grey {
+	transition: color 0.3s ease-out;
+}
+
+.th-link-grey, .th-link-grey:focus {
+	text-decoration: none;
+	color: #8F8F8E
+}
+
+.th-link-grey:hover {
+	text-decoration: none;
+	color: white;
+}
+
+.th-link-defaut, .th-link-defaut:hover, .th-link-defaut:focus {
+	text-decoration: none;
+	color: inherit;
+}
+
+/*BUTTON*/
+.th-button-grey {
+	background-color: #4E4D4A;
+	color: #DDDDDD;
+}
+
+.th-button-blue {
+	background-color: #7282C1;
+	color: white;
+}
+
+.th-button-green {
+	background-color: #42B581;
+	color: white;
+}
+
+.th-button-red {
+	background-color: #F14747;
+	color: white;
+}
+
+.th-button-grey:hover {
+	color: white;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+/*ICON*/
+.th-circle-twitter:hover {
+	background-color: #03D0FC;
+}
+
+.th-circle-facebook:hover {
+	background-color: #477EDA;
+}
+
+.th-circle-google-plus:hover {
+	background-color: #D91E00;
+}
+

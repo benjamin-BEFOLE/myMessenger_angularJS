@@ -1,2 +1,25 @@
-﻿body {
+﻿.is-hidden {
+	display: none;
+}
+
+
+
+@media screen and (max-width: 767px) {
+	.is-hide {
+		display: none;
+	}
+
+	.is-show {
+		display: block;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.is-hide {
+		display: block;
+	}
+
+	.is-show {
+		display: none;
+	}
 }

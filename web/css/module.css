@@ -1,2 +1,414 @@
-﻿body {
+﻿/*GLOBAL BUTTON*/
+.button {
+	cursor: pointer;
+	display: block;
+	padding: 7px 13px;
+	border-radius: 4px;
+	border: none;
+	transition: color 0.3s ease-out;
+}
+
+.button-lg {
+	width: 100%;
+	text-align: center;
+}
+
+.button-icon {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	font-size: 30px;
+	line-height: 50px;
+	text-align: center;
+	cursor: pointer;
+	transition: color 0.3s ease-out;
+}
+
+.button-search {
+	display: block;
+	width: 40px;
+	height: 30px;
+	margin: 0;
+	font-size: 15px;
+	line-height: 30px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.btn-social {
+	display: block;
+	height: 30px;
+	width: 30px;
+	margin: 10px 5px;
+	border-radius: 15px;
+	font-size: 20px;
+	text-align: center;
+	transition: color 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+.btn-social i {
+	line-height: 30px;
+}
+
+/*ACCUEIL*/
+.title {
+	width: 100%;
+	color: #EEEEEE;
+	text-align: center;
+}
+
+.paragraph {
+	width: 100%;
+	color: #CDCDCD;
+	text-align: justify;
+}
+
+.footer-accueil {
+	display: inline-block;
+	min-height: 20px;
+	width: 100%;
+	padding: 15px 0;
+	line-height: 20px;
+	color: #CDCDCD;
+	text-align: center;
+	vertical-align: middle;
+}
+
+/*FORMULAIRE*/
+.title-form {
+	margin: 20px 0;
+	color: #E9E9E9;
+	text-align: center;
+}
+
+.champ-form {
+	margin-bottom: 10px;
+}
+
+.label-form {
+	display: block;
+	width: 100%;
+	margin-bottom: 3px;
+	font-size: 10px;
+	color: #87909D;
+}
+
+.input-form {
+	display: block;
+	width: 100%;
+	padding-bottom: 5px;
+	background-color: transparent;
+	border-width: 0 0 1px 0;
+	border-color: #87909D;
+	color: #CCCCCC;
+}
+
+.input-form:focus {
+	border-bottom-width: 2px;
+	border-color: white;
+	color: white;
+}
+
+.text-form {
+	padding: 20px 0;
+	border-top: 1px solid #87909D;
+	color: #87909D;
+}
+
+.text-form:first-child {
+	padding-top: 0;
+	border-top-color: transparent;
+}
+	/*Erreur*/
+	.error-message {
+		display: block;
+		/*margin: 2px 0;*/
+		line-height: 14px;
+		font-size: 10px;
+		text-align: center;
+	}
+
+/*MENU DE NAVIGATION*/
+	/*Menu de navigation horizontale*/
+	.btn-nav-horiz {
+		display: block;
+		padding: 10px 7px;
+		margin: 5px 3px;
+		line-height: 20px;
+	}
+
+	/*Menu déroulant*/
+	.elm-menu {
+		display: block;
+		padding-left: 50px;
+		height: 100%;
+		width: 100%;
+	}
+
+/*CONNEXION ET INSCRIPTION*/
+.login-logo {
+	width: 170px;
+	height: 170px;
+}
+
+.login-title-logo {
+	margin: 0;
+	text-align: center;
+	font-size: 25px;
+}
+
+/*USER PROFIL*/
+.profil-img input[type=file] {
+	display: none;
+}
+
+.profil-img {
+	width: 100px;
+	height: 100px;
+	margin: auto;
+	border-radius: 50px;
+}
+
+.profil-img-height {
+	background-size: auto 100px;
+	background-position: center;
+}
+
+.mini-avatar-height {
+	background-size: auto 100%;
+	background-position: center;
+}
+
+.profil-img-width {
+	background-size: 100px auto;
+	background-position: center;
+}
+
+.mini-avatar-width {
+	background-size: 100% auto;
+	background-position: center;
+}
+
+/*USER-HOME*/
+	/*USER-HEADER_HOME*/
+	.avatar-mini {
+		display: block;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+	}
+
+	/*USER-CHAT*/
+	.input-search {
+		display: block;
+		height: 30px;
+		width: calc(100% - 40px);
+		border-style: none;
+	}
+
+	.input-search:focus {
+		outline: none;
+		color: #757575;
+	}
+
+	.chat-msg-error {
+		height: 81px;
+		line-height: 81px;
+		font-size: 20px;
+		text-align: center;
+		color: #757575;
+	}
+
+	.chat-body {
+		float: left;
+		position: relative;
+		width: 280px;
+		height: 100%;
+		padding: 10px 10px 10px 0;
+		border-style: solid;
+		border-width: 0 0 1px 0;
+		border-color: #87909D;
+	}
+	
+	.chat-main {
+		width: 100%;
+		height: 30px;
+	}
+
+	.chat-title {
+		float: left;
+		width: 70%;
+		height: 30px;
+		line-height: 30px;
+		font-size: 18px;
+		color: white;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.chat-meta {
+		float: left;
+		width: 30%;
+		height: 30px;
+		line-height: 30px;
+		color: #8F8F8E;
+		text-align: right;
+	}
+
+	.chat-msg-text {
+		width: calc(100% - 25px);
+		height: 30px;
+		line-height: 30px;
+		font-size: 16px;
+		color: #8F8F8E;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.chat-notification {
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+		width: 20px;
+		height: 20px;
+		margin: 10px 0 0 5px;
+		border-radius: 10px;
+		line-height: 20px;
+		text-align: center;
+		color: white;
+		background-color: #7282C1;
+	}
+
+	.add-contact {
+		width: 30px;
+		height: 30px;
+		margin-left: 240px;
+		line-height: 30px;
+		font-size: 20px;
+		color: #8F8F8E;
+		transition: color 0.3s ease-out;
+		cursor: pointer;
+	}
+
+	.add-contact:hover {
+		color: #7282C1;
+	}
+
+	/*USER-MSG-SCREEN*/
+	.msg-time-separator {
+		display: inline-block;
+		height: 30px;
+		padding: 0 10px;
+		border-radius: 8px;
+		line-height: 30px;
+		color: #595959;
+		background-color: #C5F1FB;
+	}
+
+	.msg-non-lu {
+		display: inline-block;
+		height: 30px;
+		padding: 0 10px;
+		margin: 5px 0;
+		border-radius: 8px;
+		line-height: 30px;
+		color: #595959;
+		background-color: white;
+	}
+
+	.msg-meta {
+		height: 14px;
+		margin: 3px 0;
+		line-height: 14px;
+		font-size: 11px;
+		color: #8F8F8E;
+	}
+
+	.msg-meta-emitted {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		padding-right: 5px;
+		text-align: right;
+	}
+
+	.msg-meta-received {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		padding-left: 5px;
+		text-align: left;
+	}
+
+	.msg {
+		position: relative;
+		display: inline-block;
+		min-width: 100px;
+		max-width: 80%;
+		height: auto;
+		word-wrap: break-word;
+		text-align: initial;
+	}
+
+	.msg-emitted {
+		padding: 3px 15px 15px 10px;
+		border-radius: 4px 0 4px 4px;
+		background-color: #DCF8C6;
+	}
+
+	.msg-received {
+		padding: 3px 10px 15px 15px;
+		border-radius: 0 4px 4px 4px;
+		background-color: white;
+	}
+
+	.msg-emitted:before {
+		content:"";
+		position: absolute;
+		left: 100%;
+		top: 0;
+		width: 0;
+		height: 0;
+		border-top: 4px solid transparent;
+		border-left: 8px solid #DCF8C6;
+		border-bottom: 4px solid transparent;
+	}
+
+	.msg-received:before {
+		content:"";
+		position: absolute;
+		right: 100%;
+		top: 0;
+		width: 0;
+		height: 0;
+		border-top: 4px solid transparent;
+		border-right: 8px solid white;
+		border-bottom: 4px solid transparent;
+	}
+
+	/*USER-FOOTER-HOME*/
+	.input-msg {
+		display: block;
+		position: absolute;
+		bottom: 0;
+		height: 30px;
+		width: 100%;
+		line-height: 16px;
+		padding: 7px 10px;
+		border-radius: 3px;
+		border-style: none;
+	}
+
+	.input-msg:focus {
+		outline: none;
+		color: #757575;
+	}
+
+
+@media screen and (max-width: 767px) {
+
+}
+
+@media screen and (min-width: 768px) {
+
 }

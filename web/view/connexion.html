@@ -1,9 +1,48 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title></title>
-    </head>
-    <body>
-    </body>
-</html>
+﻿<!-- HEADER -->
+<header>
+	<div class="l-centered-block">
+		<a class="button-icon th-link-grey" href="#accueil"><i class="icon-home"></i></a>
+	</div>
+</header>
+
+<!-- BODY -->
+<div class="l-wrap-login">
+	<div class="l-centered-login">
+		<div class="l-login-wrap-logo">
+			<div class="container-fluid">
+				<img class="login-logo" src="/web/img/theme/paper-plane.png">
+				<h1 class="login-title-logo">CONNEXION</h1>
+			</div>
+		</div>
+		<div class="l-login-wrap-form">
+			<div class="container-fluid l-login-form">
+				<h2 class="title-form">BIENVENU!</h2> 
+				<form method="post">
+					<div class="champ-form">
+						<label class="label-form">EMAIL</label>
+						<input class="input-form" type="text" autocomplete='email' ng-model="email">
+					</div>
+					<div class="champ-form">
+						<label class="label-form">MOT DE PASSE</label>
+						<input class="input-form" type="password" autocomplete='password' ng-model="password">
+					</div>
+					<div class="l-wrap-submit-form">
+						<button class="button button-lg th-button-blue" ng-click="sendForm()">SE CONNECTER</button>
+					</div>
+					<div class="text-form">
+						Vous n'êtes pas inscrit? <a class="th-link-white" href="#inscription">S'inscrire</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="l-wrap-footer">
+	<div class="l-centered ">
+		<div class="container-fluid footer-accueil">
+			Icons made by <a href="https://www.flaticon.com/authors/plainicon" title="Plainicon">Plainicon</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+		</div>
+	</div>
+</footer>

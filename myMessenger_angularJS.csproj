@@ -837,6 +837,31 @@
     <Content Include="Scripts\angular-aria.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-animate.js" />
+    <Content Include="app\app.js" />
+    <Content Include="web\view\home.html" />
+    <Content Include="web\css\bases.css" />
+    <Content Include="web\css\layout.css" />
+    <Content Include="web\css\module.css" />
+    <Content Include="web\css\theme.css" />
+    <Content Include="app\appConfig.js" />
+    <Content Include="web\view\functionalities.html" />
+    <Content Include="web\view\security.html" />
+    <Content Include="web\css\state.css" />
+    <Content Include="web\img\theme\paper-plane.png" />
+    <Content Include="web\img\theme\footer_lodyas.png" />
+    <Content Include="web\img\theme\dark_embroidery.png" />
+    <Content Include="web\img\theme\congruent_outline.png" />
+    <Content Include="web\view\inscription.html" />
+    <Content Include="web\view\connexion.html" />
+    <Content Include="src\user\controllers\connexionCtrl.js" />
+    <Content Include="src\user\directives\myCkeckEmail.js" />
+    <Content Include="src\user\controllers\inscriptionCtrl.js" />
+    <Content Include="src\user\directives\myCheckUserName.js" />
+    <Content Include="src\user\directives\myCheckPassword.js" />
+    <Content Include="src\user\services\checkUserData.js" />
+    <Content Include="src\default\controllers\homeCtrl.js" />
+    <Content Include="web\view\user-home.html" />
+    <Content Include="web\view\user-profil.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -884,6 +909,21 @@
     <None Include="Scripts\angular-cookies.min.js.map" />
     <None Include="Scripts\angular-aria.min.js.map" />
     <None Include="Scripts\angular-animate.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\" />
+    <Folder Include="app\" />
+    <Folder Include="web\" />
+    <Folder Include="web\view\" />
+    <Folder Include="web\css\" />
+    <Folder Include="web\img\" />
+    <Folder Include="web\img\theme\" />
+    <Folder Include="src\user\" />
+    <Folder Include="src\user\controllers\" />
+    <Folder Include="src\user\directives\" />
+    <Folder Include="src\user\services\" />
+    <Folder Include="src\default\" />
+    <Folder Include="src\default\controllers\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
