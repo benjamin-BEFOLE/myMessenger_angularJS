@@ -27,8 +27,8 @@ appModule.config([
             	controller: 'connexionCtrl'
             })
             .when('/user/:id/profil',{
-            	templateUrl: 'web/view/user-profil.html'
-            	// controller: 'connexionCtrl'
+            	templateUrl: 'web/view/user-profil.html',
+            	controller: 'profilCtrl'
             })
             .otherwise({
             	redirectTo: '/home'

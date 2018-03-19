@@ -3,17 +3,13 @@
 *
 * Description Module principal de l'application
 */
-var appModule = angular.module('myMessenger', [
+var appModule = angular.module(
+	// Nom du module
+	'myMessenger', 
 	// Dépendances
-	'ngRoute',
+	['ngRoute',
 	'user'
 ]);
-
-/**
-*  Définition de quelques constantes
-*
-*/
-appModule.constant('API_URL', 'http://localhost:6060/api/v0/');
 
 
 /**
@@ -21,5 +17,19 @@ appModule.constant('API_URL', 'http://localhost:6060/api/v0/');
 *
 * Description Contrôle et gère les données des utilisateurs
 */
-var userModule = angular.module('user', ['ngResource']);  
+var userModule = angular.module(
+	// Nom du module
+	'user', 
+	// Dépendances
+	['ngResource',
+	'ngStorage'
+]);
+
+
+/**
+*  Définition de quelques constantes
+*
+*/
+userModule.constant('API_URL', 'http://localhost:6060/api/v0/');
+userModule.constant('AVATAR_URL', 'http://localhost:6060/img/avatar/');  
 

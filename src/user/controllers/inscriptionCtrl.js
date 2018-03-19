@@ -2,8 +2,9 @@
 * Controller s'occupant des données d'inscription de l'utilisateur
 *
 */
-userModule.controller('inscriptionCtrl', ['$scope', '$location', 'checkUserData', 'user',
-	function($scope, $location, ckeckData, userServ){
+userModule.controller('inscriptionCtrl', 
+	['$scope', '$sessionStorage', '$location', 'checkUserData', 'user',
+	function($scope, $sessionStorage, $location, ckeckData, userServ){
 		$scope.email = '';
 		$scope.emailError = '';
 		$scope.userName = '';
@@ -30,7 +31,12 @@ userModule.controller('inscriptionCtrl', ['$scope', '$location', 'checkUserData'
 						// Succès 
 						function (resp, status) {
 							userServ.data = resp.data.user;
-							console.log(userServ.data);
+							$sessionStorage.id = resp.data.user.id;
+							$sessionStorage.name = resp.data.user.name;
+							$sessionStorage.email = resp.data.user.email;
+							$sessionStorage.token = resp.data.user.token;
+							$sessionStorage.avatarPath = resp.data.user.avatarPath;
+							$sessionStorage.avatarClass = resp.data.user.avatarClass;
 
 							// Redirection vers la page de profil
 							$location.path('/user/' + userServ.data.id + '/profil');
@@ -40,7 +46,6 @@ userModule.controller('inscriptionCtrl', ['$scope', '$location', 'checkUserData'
 							$scope.emailError = resp.data.msg.emailError;
 							$scope.userNameError = resp.data.msg.nameError;
 							$scope.passwordError = resp.data.msg.passwordError;
-							console.log(resp.data.msg);
 				});
 			}
 		}

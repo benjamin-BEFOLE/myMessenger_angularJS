@@ -2,8 +2,9 @@
 * Controller s'occupant des données de connexion de l'utilisateur
 *
 */
-userModule.controller('connexionCtrl', ['$scope', '$location', 'checkUserData', 'user',
-	function($scope, $location, ckeckData, userServ){
+userModule.controller('connexionCtrl', 
+	['$scope', '$sessionStorage', '$location', 'checkUserData', 'user',
+	function($scope, $sessionStorage, $location, ckeckData, userServ){
 		$scope.email = '';
 		// $scope.emailError = 'emailError';
 		$scope.password = '';

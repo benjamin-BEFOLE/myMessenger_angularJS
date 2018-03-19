@@ -5,9 +5,12 @@
 [Oo]bj/
 [Bb]in/
 packages/
+#Scripts/
+#scripts/
 TestResults/
 
 # globs
+.vs
 Makefile.in
 *.DS_Store
 *.sln.cache
