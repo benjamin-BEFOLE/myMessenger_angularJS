@@ -4,20 +4,31 @@
 */
 userModule.controller('profilCtrl', ['$scope', '$sessionStorage', 'user', 'AVATAR_URL',
 	function($scope, $sessionStorage, userServ, AVATAR_URL){
+		if ($sessionStorage.id == undefined || $sessionStorage.email == undefined ||
+			$sessionStorage.name == undefined || $sessionStorage.token == undefined ||
+			$sessionStorage.avatarPath == undefined || $sessionStorage.avatarClass == undefined) 
+		{
+			userServ.deconnexion(); 	// Déconnexion de l'utilisateur
+		}
+
 		// Données session
 		$scope.$storage = $sessionStorage;
 
 		// Données utilisateur modifiées
 		$scope.name = '';
 		$scope.email = '';
-		$scope.oldPassword = '';
-		$scope.newPassword = '';
+		$scope.password1 = '';
+		$scope.password2 = '';
 
-		// Messages d'erreur
+		// Messages 
 		$scope.nameError = '';
 		$scope.emailError = '';
 		$scope.passwordError = '';
 		$scope.avatarError = '';
+		$scope.nameOk = '';
+		$scope.emailOk = '';
+		$scope.passwordOk = '';
+		$scope.avatarOk = '';
 
 		$scope.btnCancel = false;
 		$scope.btnEdit = true;
@@ -53,8 +64,18 @@ userModule.controller('profilCtrl', ['$scope', '$sessionStorage', 'user', 'AVATA
 			// Données utilisateur modifiées
 			$scope.name = '';
 			$scope.email = '';
-			$scope.oldPassword = '';
-			$scope.newPassword = '';
+			$scope.password1 = '';
+			$scope.password2 = '';
+
+			// Messages 
+			$scope.nameError = '';
+			$scope.emailError = '';
+			$scope.passwordError = '';
+			$scope.avatarError = '';
+			$scope.nameOk = '';
+			$scope.emailOk = '';
+			$scope.passwordOk = '';
+			$scope.avatarOk = '';
 
 			$scope.pointer = {'cursor': 'default'};
 		}
@@ -77,20 +98,139 @@ userModule.controller('profilCtrl', ['$scope', '$sessionStorage', 'user', 'AVATA
 			};
 			
 			// Envoi de l'image à l'API
-			userServ.upload(data)
+			userServ.setAvatar(data, $scope.$storage.token)
 				.then(
 					// Succès 
-					function (resp, status) {
-						$scope.$storage.avatarPath = AVATAR_URL + resp.data.avatar.name + '?' + Date.now();
-						$scope.$storage.avatarClass = resp.data.avatar.class;
-						$scope.avatarError = resp.data.msgError;
-						console.log(resp.data.avatar);
+					function (resp) {
+						$sessionStorage.avatarPath = AVATAR_URL + resp.data.avatar.name + '?' + Date.now();
+						$sessionStorage.avatarClass = resp.data.avatar.class;
+						$scope.$storage = $sessionStorage; // Données session
+						$scope.avatarOk = 'bien modifié';
+						$scope.avatarError = '';
+						// console.log(resp.data.avatar);
 					},
 
 					// Echec
-					function (resp, status) {
+					function (resp) {
+						if (resp.status == 401) {
+							userServ.deconnexion(); 	// Déconnexion de l'utilisateur
+						}
+
+						$scope.avatarOk = '';
 						$scope.avatarError = resp.data.msgError;
-						// console.log(resp.data);
+						console.log(status);
 					});
 		})
+
+		// EVENEMENT: click sur le bouton "delete-avatar"
+		$scope.delete = function () {
+			if ($scope.$storage.avatarPath.indexOf('default.png') == -1) {
+				// Modification avatar
+				userServ.setAvatarDefault($scope.$storage.id, $scope.$storage.token)
+					.then(
+						// Succès 
+						function (resp) {
+							$sessionStorage.avatarPath = AVATAR_URL + resp.data.avatar.name + '?' + Date.now();
+							$sessionStorage.avatarClass = resp.data.avatar.class;
+							$scope.$storage = $sessionStorage; // Données session
+							$scope.avatarOk = 'bien modifié';
+							$scope.avatarError = '';
+							// console.log(resp.data.avatar);
+						},
+
+						// Echec
+						function (resp) {
+							if (resp.status == 401) {
+								userServ.deconnexion(); 	// Déconnexion de l'utilisateur
+							}
+
+							$scope.avatarOk = '';
+							$scope.avatarError = 'Erreur serveur';
+							// console.log(resp);
+						});
+			}
+		}
+
+		// EVENEMENT: click sur le bouton enregistrer
+		$scope.submit = function () {
+			if ($scope.$storage.name != $scope.name) {
+				// Modification nom 
+				userServ.setName($scope.$storage.id, $scope.name, $scope.$storage.token)
+					.then(
+						// Succès 
+						function (resp) {
+							$sessionStorage.name = resp.data.name;
+							$scope.nameOk = 'bien modifié';
+							$scope.nameError = '';
+							// console.log(resp.data);
+						},
+
+						// Echec
+						function (resp) {
+							if (resp.status == 401) {
+								userServ.deconnexion(); 	// Déconnexion de l'utilisateur
+							}
+
+							$scope.nameOk = '';
+							$scope.nameError = resp.data.msgError;
+							// console.log(resp.data);
+						});
+			}
+
+			if ($scope.$storage.email != $scope.email) {
+				// Modification email 
+				userServ.setEmail($scope.$storage.id, $scope.email, $scope.$storage.token)
+					.then(
+						// Succès 
+						function (resp) {
+							$sessionStorage.email = resp.data.email;
+							$scope.emailOk = 'bien modifié';
+							$scope.emailError = '';
+							// console.log(resp.data);
+						},
+
+						// Echec
+						function (resp) {
+							if (resp.status == 401) {
+								userServ.deconnexion(); 	// Déconnexion de l'utilisateur
+							}
+
+							$scope.emailOk = '';
+							$scope.emailError = resp.data.msgError;
+							// console.log(resp.data);
+						});
+			}
+
+			if ($scope.password1 != '' || $scope.password2 != '') {
+				// Modification mot de passe 
+				userServ.setNewPassword($scope.$storage.id, $scope.password1, $scope.password2, $scope.$storage.token)
+					.then(
+						// Succès 
+						function (resp) {
+							$scope.passwordOk = 'bien modifié';
+							$scope.passwordError = '';
+							// console.log(resp.data);
+						},
+
+						// Echec
+						function (resp) {
+							if (resp.status == 401) {
+								userServ.deconnexion(); 	// Déconnexion de l'utilisateur
+							}
+
+							$scope.passwordOk = '';
+							$scope.passwordError = resp.data.msgError;
+							// console.log(resp.data);
+						});
+			}
+
+			if ($scope.password1 == '' && $scope.password2 == '') {
+				$scope.passwordOk = '';
+				$scope.passwordError = '';
+			}
+
+			// Données session
+			$scope.$storage = $sessionStorage;
+			// console.log($sessionStorage);
+		}
 }]);

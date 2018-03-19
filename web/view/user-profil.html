@@ -15,36 +15,34 @@
 						<div id="image-profil" class="profil-img {{$storage.avatarClass}}" title="avatar" style="background-image: url({{$storage.avatarPath}});" ng-style="pointer">
 							<input id="input-file" name="fileName" type="file">
 						</div>
-						<a href="#" class="l-top-right th-link-grey" ng-show="deleteAvatar" title="supprimer"><i class="glyphicon glyphicon-trash"></i></a>
+						<span class="l-top-right th-link-grey" ng-show="deleteAvatar" ng-click="delete()" title="supprimer"><i class="glyphicon glyphicon-trash"></i></span>
+						<span class="error-message th-correct">{{avatarOk}}</span>
 						<span class="error-message th-warning">{{avatarError}}</span>
-						<!-- <div id="avatarError" class="msgError"></div> -->
 					</div>
 				</div>
 				<div class="l-profil-wrap-form">
 					<div class="container-fluid l-profil-form">
 						<div class="champ-form">
 							<label class="label-form">NOM D'UTILISATEUR</label>
-							<input class="input-form" type="text" placeholder="{{$storage.name}}" ng-disabled="disabled" ng-model="name">
+							<input class="input-form" autocomplete="name" type="name" placeholder="{{$storage.name}}" ng-disabled="disabled" ng-model="name">
+							<span class="error-message th-correct">{{nameOk}}</span>
 							<span class="error-message th-warning">{{nameError}}</span>
-							<!-- <div id="userNameError" class="msgError"></div> -->
 						</div>
 						<div class="champ-form">
 							<label class="label-form">EMAIL</label>
-							<input class="input-form" type="text" placeholder="{{$storage.email}}" ng-disabled="disabled" ng-model="email">
+							<input class="input-form" autocomplete="email" type="email" placeholder="{{$storage.email}}" ng-disabled="disabled" ng-model="email">
+							<span class="error-message th-correct">{{emailOk}}</span>
 							<span class="error-message th-warning">{{emailError}}</span>
-							<!-- <div id="emailError" class="msgError"></div> -->
 						</div>
 						<div class="champ-form">
-							<label class="label-form">MOT DE PASSE ACTUEL</label>
-							<input class="input-form password" type="text" ng-disabled="disabled" ng-model="oldPassword">
+							<label class="label-form">MOT DE PASSE</label>
+							<input class="input-form password" autocomplete="password" type="password" ng-disabled="disabled" ng-model="password1">
+							<span class="error-message th-correct">{{passwordOk}}</span>
 							<span class="error-message th-warning">{{passwordError}}</span>
-							<!-- <div class="passwordError msgError"></div> -->
 						</div>
 						<div class="champ-form">
-							<label class="label-form">NOUVEAU MOT DE PASSE</label>
-							<input class="input-form password" type="text" ng-disabled="disabled" ng-model="newPassword">
-							<span class="error-message th-warning">{{passwordError}}</span>
-							<!-- <div class="passwordError msgError"></div> -->
+							<label class="label-form">RESAISIR MOT DE PASSE</label>
+							<input class="input-form password" autocomplete="password" type="password" ng-disabled="disabled" ng-model="password2">
 						</div>
 						<div class="l-wrap-submit-form" ng-show="btnEdit">
 							<div class="button button-lg th-button-blue" ng-click="edit()">EDITER</div>
@@ -54,7 +52,7 @@
 								<div id="button-cancel" class="button th-button-red" ng-click="cancel()">ANNULER</div>
 							</div>
 							<div class="l-right">
-								<div id="submit" class="button th-button-green">ENREGISTRER</div>
+								<div id="submit" class="button th-button-green" ng-click="submit()">ENREGISTRER</div>
 							</div>
 						</div>
 					</div>

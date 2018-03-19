@@ -3,8 +3,16 @@
 *
 */
 userModule.controller('inscriptionCtrl', 
-	['$scope', '$sessionStorage', '$location', 'checkUserData', 'user',
-	function($scope, $sessionStorage, $location, ckeckData, userServ){
+	['$scope', '$sessionStorage', '$location', 'checkUserData', 'user', 'AVATAR_URL',
+	function($scope, $sessionStorage, $location, ckeckData, userServ, AVATAR_URL){
+		if ($sessionStorage.id != undefined && $sessionStorage.email != undefined &&
+			$sessionStorage.name != undefined && $sessionStorage.token != undefined &&
+			$sessionStorage.avatarPath != undefined && $sessionStorage.avatarClass != undefined) 
+		{
+			// Redirection vers la page de profil
+			$location.path('/user/' + $sessionStorage.id + '/profil');
+		}
+		
 		$scope.email = '';
 		$scope.emailError = '';
 		$scope.userName = '';
@@ -35,7 +43,7 @@ userModule.controller('inscriptionCtrl',
 							$sessionStorage.name = resp.data.user.name;
 							$sessionStorage.email = resp.data.user.email;
 							$sessionStorage.token = resp.data.user.token;
-							$sessionStorage.avatarPath = resp.data.user.avatarPath;
+							$sessionStorage.avatarPath = AVATAR_URL + resp.data.user.avatarName + '?' + Date.now();
 							$sessionStorage.avatarClass = resp.data.user.avatarClass;
 
 							// Redirection vers la page de profil
