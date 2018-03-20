@@ -30,6 +30,10 @@ appModule.config([
             	templateUrl: 'web/view/user-profil.html',
             	controller: 'profilCtrl'
             })
+            .when('/user/:id/home',{
+                  templateUrl: 'web/view/user-home.html',
+                  controller: 'homeCtrl'
+            })
             .otherwise({
             	redirectTo: '/home'
             });

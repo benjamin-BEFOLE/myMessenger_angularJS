@@ -839,6 +839,7 @@
     <Content Include="packages.config" />
     <Content Include="scripts\ngStorage.min.js" />
     <Content Include="scripts\ngStorage.js" />
+    <Content Include="src\user\controllers\homeCtrl.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">

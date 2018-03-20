@@ -12,7 +12,7 @@ userModule.controller('inscriptionCtrl',
 			// Redirection vers la page de profil
 			$location.path('/user/' + $sessionStorage.id + '/profil');
 		}
-		
+
 		$scope.email = '';
 		$scope.emailError = '';
 		$scope.userName = '';
@@ -38,7 +38,6 @@ userModule.controller('inscriptionCtrl',
 					then(
 						// Succès 
 						function (resp, status) {
-							userServ.data = resp.data.user;
 							$sessionStorage.id = resp.data.user.id;
 							$sessionStorage.name = resp.data.user.name;
 							$sessionStorage.email = resp.data.user.email;

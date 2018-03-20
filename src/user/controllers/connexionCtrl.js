@@ -31,7 +31,6 @@ userModule.controller('connexionCtrl',
 					.then(
 						// Succès 
 						function (resp, status) {
-							userServ.data = resp.data.user;
 							$sessionStorage.id = resp.data.user.id;
 							$sessionStorage.name = resp.data.user.name;
 							$sessionStorage.email = resp.data.user.email;
