@@ -5,9 +5,8 @@
 [Oo]bj/
 [Bb]in/
 packages/
-Scripts/
-scripts/
 TestResults/
+node_modules/
 
 # globs
 .vs

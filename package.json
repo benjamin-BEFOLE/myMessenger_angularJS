@@ -1,0 +1,26 @@
+{
+  "name": "my_messenger_angular_js",
+  "version": "1.0.0",
+  "description": "vue d'une application web permettant à ses utilisateurs de s'envoyer des messages en temps réel.",
+  "main": "index.html",
+  "dependencies": {
+    "angular": "~1.6.9",
+    "angular-resource": "~1.6.9",
+    "angular-route": "~1.6.9",
+    "ngstorage": "~0.3.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benjamin-BEFOLE/myMessenger_angularJS.git"
+  },
+  "author": "Benjamin BEFOLE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benjamin-BEFOLE/myMessenger_angularJS/issues"
+  },
+  "homepage": "https://github.com/benjamin-BEFOLE/myMessenger_angularJS#readme"
+}
