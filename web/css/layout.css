@@ -177,7 +177,7 @@
 	right: 0;
 	width: calc(100% - 360px);
 	height: 100vh;
-	background-image: url("/myMessenger/img/theme/congruent_outline.png");
+	background-image: url("../img/theme/congruent_outline.png");
 	opacity: 0.9;
 	z-index: -1;
 }
@@ -202,7 +202,6 @@
 	}
 
 	.l-user-list-menu {
-		display: none;
 		position: absolute;
 		left: 0;
 		top: 60px;

@@ -1,7 +1,7 @@
 ﻿<!-- HEADER -->
 <header>
 	<div class="l-centered-block">
-		<a class="button-icon th-link-grey" href="Home" title="espace utilisateur"><i class="icon-home"></i></a>
+		<a class="button-icon th-link-grey" ng-href="#user/{{$storage.id}}/home" title="espace utilisateur"><i class="icon-home"></i></a>
 	</div>
 </header>
 
@@ -49,10 +49,10 @@
 						</div>
 						<div class="l-wrap-submit-form" ng-show="btnCancel">
 							<div class="l-left">
-								<div id="button-cancel" class="button th-button-red" ng-click="cancel()">ANNULER</div>
+								<div class="button th-button-red" ng-click="cancel()">ANNULER</div>
 							</div>
 							<div class="l-right">
-								<div id="submit" class="button th-button-green" ng-click="submit()">ENREGISTRER</div>
+								<div class="button th-button-green" ng-click="submit()">ENREGISTRER</div>
 							</div>
 						</div>
 					</div>

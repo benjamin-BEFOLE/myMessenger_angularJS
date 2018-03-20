@@ -4,6 +4,7 @@
 */
 userModule.controller('profilCtrl', ['$scope', '$sessionStorage', 'user', 'AVATAR_URL',
 	function($scope, $sessionStorage, userServ, AVATAR_URL){
+		// Si utilisateur non identifié
 		if ($sessionStorage.id == undefined || $sessionStorage.email == undefined ||
 			$sessionStorage.name == undefined || $sessionStorage.token == undefined ||
 			$sessionStorage.avatarPath == undefined || $sessionStorage.avatarClass == undefined) 

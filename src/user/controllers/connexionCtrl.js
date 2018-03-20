@@ -10,7 +10,7 @@ userModule.controller('connexionCtrl',
 			$sessionStorage.avatarPath != undefined && $sessionStorage.avatarClass != undefined) 
 		{
 			// Redirection vers la page de profil
-			$location.path('/user/' + $sessionStorage.id + '/profil');
+			$location.path('/user/' + $sessionStorage.id + '/home');
 		}
 
 		$scope.email = '';
@@ -40,7 +40,7 @@ userModule.controller('connexionCtrl',
 							// console.log($sessionStorage);
 
 							// Redirection vers la page de profil
-							$location.path('/user/' + resp.data.user.id + '/profil');
+							$location.path('/user/' + resp.data.user.id + '/home');
 						},
 						// Echec
 						function (resp, status) {
