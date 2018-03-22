@@ -119,7 +119,6 @@ userModule.controller('profilCtrl', ['$scope', '$sessionStorage', 'user', 'AVATA
 
 						$scope.avatarOk = '';
 						$scope.avatarError = resp.data.msgError;
-						console.log(status);
 					});
 		})
 

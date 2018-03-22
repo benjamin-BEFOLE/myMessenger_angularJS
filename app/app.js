@@ -1,21 +1,23 @@
 ﻿/**
 *  Module 'myMessenger'
 *
-* Description Module principal de l'application
+* Description: Module principal de l'application
 */
 var appModule = angular.module(
 	// Nom du module
 	'myMessenger', 
 	// Dépendances
 	['ngRoute',
-	'user'
+	'user', 
+	'chat', 
+	'discussion'
 ]);
 
 
 /**
 *  Module 'user'
 *
-* Description Contrôle et gère les données des utilisateurs
+* Description: Contrôle et gère les données des utilisateurs
 */
 var userModule = angular.module(
 	// Nom du module
@@ -23,6 +25,28 @@ var userModule = angular.module(
 	// Dépendances
 	['ngResource',
 	'ngStorage'
+]);
+
+/**
+*  Module 'chat'
+*
+*/
+var chatModule = angular.module(
+	// Nom du module
+	'chat', 
+	// Dépendances
+	['ngStorage'
+]);
+
+/**
+*  Module 'discussion'
+*
+*/
+var discussionModule = angular.module(
+	// Nom du module
+	'discussion', 
+	// Dépendances
+	['ngStorage'
 ]);
 
 

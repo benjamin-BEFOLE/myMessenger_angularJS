@@ -3,15 +3,15 @@
 
 		<!-- HEADER -->
 		<header class="l-wrap-header-home" ng-controller="homeHeaderCtrl">
-			<div id="userAvatar" class="l-wrap-header-avatar"><a class="avatar-mini {{$storage.avatarClass}}" href="Profil" title="profil utilisateur" style="background-image: url({{$storage.avatarPath}});"></a></div>
+			<div class="l-wrap-header-avatar"><a class="avatar-mini {{$storage.avatarClass}}" href="Profil" title="profil utilisateur" style="background-image: url({{$storage.avatarPath}});"></a></div>
 			<nav>
-				<div id="btn-menu" class="l-right button-icon th-grey" title="menu" ng-click="menu()">
+				<div class="l-right button-icon th-grey" title="menu" ng-click="menu()">
 					<i class="glyphicon glyphicon-menu-hamburger"></i>
 				</div>
-				<ul id="menu" class="l-user-list-menu" ng-hide="menuIsHidden">
-					<li id="btn-new-contact" class="l-user-elm-menu"><span class="elm-menu th-link-grey" ng-click="showNewContact()">Nouveau Contact</span></li>
-					<li id="btn-contact" class="l-user-elm-menu"><span class="elm-menu th-link-grey" ng-click="showContact()">Contact</span></li>
-					<li id="btn-discussion" class="l-user-elm-menu"><span class="elm-menu th-link-grey" ng-click="showDiscussion()">Discussion</span></li>
+				<ul class="l-user-list-menu" ng-hide="menuIsHidden">
+					<li class="l-user-elm-menu"><span class="elm-menu th-link-grey" ng-click="showNewContact()">Nouveau Contact</span></li>
+					<li class="l-user-elm-menu"><span class="elm-menu th-link-grey" ng-click="showContact()">Contact</span></li>
+					<li class="l-user-elm-menu"><span class="elm-menu th-link-grey" ng-click="showDiscussion()">Discussion</span></li>
 					<li class="l-user-elm-menu"><a ng-href="#user/{{$storage.id}}/profil" class="elm-menu th-link-grey">Profil</a></li>
 					<li class="l-user-elm-menu"><span ng-click="deconnexion()" class="elm-menu th-link-grey">Déconnexion</span></li>
 				</ul>
@@ -19,7 +19,7 @@
 		</header>
 
 		<!-- CHAT-DISCUSSION -->
-		<div id="discussion" class="l-nav">
+		<div id="discussion" class="l-nav is-hidden">
 			<div class="l-wrap-search js-search">
 				<div class="l-search">
 					<form>
@@ -47,26 +47,53 @@
 		</div>
 		
 		<!-- CHAT-NEW-CONTACT -->
-		<div id="new-contact" class="l-nav is-hidden">
+		<div id="new-contact" class="l-nav" ng-controller="chatNewContact">
 			<div class="l-wrap-search js-search">
 				<div class="l-search">
 					<form>
-						<label id="btn-search-new-contact" class="l-left button-search th-grey" title="recherche"><span class="glyphicon glyphicon-search"></span></label>
-						<input id="input-new-contact" class="l-left input-search" type="text" name="" placeholder="Ajouter un nouveau contact">
+						<label class="l-left button-search th-grey" title="recherche" ng-click="find(search)"><span class="glyphicon glyphicon-search"></span></label>
+						<input class="l-left input-search" type="text" placeholder="Ajouter un nouveau contact" ng-model="search">
 					</form>
 				</div>
 			</div>
 			<div id="chat-new-contact" class="l-wrap-nav-chat js-search-result">
-				<div class="l-wrap-chat">
-					<div class="chat-msg-error">Aucun résultat</div>
+				<div class="l-wrap-chat" ng-show="error">
+					<div class="chat-msg-error">{{msgError}}</div>
+				</div>
+				<!-- ng-repeat -->
+				<div ng-repeat="(key, value) in data">
+					<div class="l-wrap-chat" ng-show="value.bool"> 
+						<div class="l-wrap-chat-avatar">
+							<div class="avatar-mini {{value.avatarClass}}" style="background-image: url({{value.avatarPath}});"></div>
+						</div>
+						<div class="chat-body">
+							<div class="chat-main">
+								<div class="chat-title">{{value.name}}</div>
+							</div>
+							<div class="add-contact" title="ajouter contact" ng-click="add(key)"><span class="glyphicon glyphicon-plus-sign"></span></div>
+						</div>
+					 </div>
 				</div>
 			</div>
 		</div>
 
 	</div>
 	<div class="l-home-wrap-right">
+		<!-- SCREEN-DISCUSSION -->
+		<div class="l-wrap-header-home" ng-controller="screenDiscussionCtrl" ng-hide="isHidden">
+			<div id="avatar-contact" class="l-wrap-header-avatar">
+			</div>
+			<div>
+				<div class="l-right button-icon th-grey" title="menu">
+					<i class="glyphicon glyphicon-option-vertical"></i>
+				</div>
+			</div>
+		</div>
+		<div class="l-wrap-msg-screen">
+			<div class="l-wrap-msg">
+			</div>
+		</div>
 		<!-- <?php
-			require_once $discussionScreen;
 			require_once $footer;
 		?> -->
 	</div>

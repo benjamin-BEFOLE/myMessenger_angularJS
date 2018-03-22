@@ -1,4 +1,7 @@
-﻿
+﻿/**
+* Controller s'occupant de l'espace utilisateur
+*
+*/
 userModule.controller('userHomeCtrl', ['$scope', '$sessionStorage', 'user', 
 	function($scope, $sessionStorage, userServ){
 		// Si utilisateur non identifié

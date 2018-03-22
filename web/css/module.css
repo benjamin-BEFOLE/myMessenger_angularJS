@@ -284,9 +284,11 @@
 		width: 30px;
 		height: 30px;
 		margin-left: 240px;
+		border-radius: 15px;
 		line-height: 30px;
 		font-size: 20px;
 		color: #8F8F8E;
+		text-align: center;
 		transition: color 0.3s ease-out;
 		cursor: pointer;
 	}
