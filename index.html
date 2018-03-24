@@ -17,6 +17,7 @@
     <body>
     	<ng-view></ng-view>
         <!-- Modules -->
+        <script type="text/javascript" src="node_modules/socket.io-client/dist/socket.io.slim.js"></script>
     	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
         <script type="text/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
         <script type="text/javascript" src="node_modules/angular-resource/angular-resource.min.js"></script>
@@ -32,14 +33,24 @@
         <script type="text/javascript" src="src/user/controllers/user-homeCtrl.js"></script>
         <script type="text/javascript" src="src/user/controllers/home-headerCtrl.js"></script>
         <script type="text/javascript" src="src/chat/controllers/new-contactCtrl.js"></script>
+        <script type="text/javascript" src="src/chat/controllers/contactCtrl.js"></script>
+        <script type="text/javascript" src="src/chat/controllers/discussionCtrl.js"></script>
+        <script type="text/javascript" src="src/discussion/controllers/header-discussionCtrl.js"></script>
         <script type="text/javascript" src="src/discussion/controllers/screen-discussionCtrl.js"></script>
+        <script type="text/javascript" src="src/discussion/controllers/input-discussionCtrl.js"></script>
         <!-- Directives -->
         <script type="text/javascript" src="src/user/directives/myCkeckEmail.js"></script>
         <script type="text/javascript" src="src/user/directives/myCheckUserName.js"></script>
         <script type="text/javascript" src="src/user/directives/myCheckPassword.js"></script>
+        <script type="text/javascript" src="src/discussion/directives/myMessage.js"></script>
         <!-- Services -->
         <script type="text/javascript" src="src/user/services/checkUserData.js"></script>
     	<script type="text/javascript" src="src/user/services/user.js"></script>
         <script type="text/javascript" src="src/chat/services/new-contact.js"></script>
+        <script type="text/javascript" src="src/chat/services/contact.js"></script>
+        <script type="text/javascript" src="src/chat/services/discussion.js"></script>
+        <script type="text/javascript" src="src/discussion/services/time.js"></script>
+        <script type="text/javascript" src="src/discussion/services/discussion.js"></script>
+        <script type="text/javascript" src="src/discussion/services/display-message.js"></script>
     </body>
 </html>

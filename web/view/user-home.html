@@ -3,7 +3,7 @@
 
 		<!-- HEADER -->
 		<header class="l-wrap-header-home" ng-controller="homeHeaderCtrl">
-			<div class="l-wrap-header-avatar"><a class="avatar-mini {{$storage.avatarClass}}" href="Profil" title="profil utilisateur" style="background-image: url({{$storage.avatarPath}});"></a></div>
+			<div class="l-wrap-header-avatar"><a class="avatar-mini {{$storage.avatarClass}}" ng-href="#user/{{$storage.id}}/profil" title="profil utilisateur" style="background-image: url({{$storage.avatarPath}});"></a></div>
 			<nav>
 				<div class="l-right button-icon th-grey" title="menu" ng-click="menu()">
 					<i class="glyphicon glyphicon-menu-hamburger"></i>
@@ -19,35 +19,70 @@
 		</header>
 
 		<!-- CHAT-DISCUSSION -->
-		<div id="discussion" class="l-nav is-hidden">
+		<div id="discussion" class="l-nav" ng-controller="chatDiscussionCtrl">
 			<div class="l-wrap-search js-search">
 				<div class="l-search">
 					<form>
-						<label id="btn-search-discussion" class="l-left button-search th-grey" title="recherche"><span class="glyphicon glyphicon-search"></span></label>
-						<input id="input-discussion" class="l-left input-search" type="text" name="" placeholder="Rechercher une discussion">
+						<label class="l-left button-search th-grey" title="recherche" ng-click="find(search)"><span class="glyphicon glyphicon-search"></span></label>
+						<input class="l-left input-search" type="text" placeholder="Rechercher un contact" ng-model="search">
 					</form>
 				</div>
 			</div>
 			<div id="chat-discussion" class="l-wrap-nav-chat js-search-result">
+				<div class="l-wrap-chat" ng-show="error">
+					<div class="chat-msg-error">{{msgError}}</div>
+				</div>
+				<!-- ng-repeat -->
+				<div ng-repeat="(key, value) in data">
+					<div class="l-wrap-chat"> 
+						<div class="l-wrap-chat-avatar">
+							<div class="avatar-mini {{value.contact.avatarClass}}" style="background-image: url({{value.contact.avatarPath}});"></div>
+						</div>
+						<div class="chat-body">
+							<div class="chat-main">
+								<div class="chat-title"  ng-click="select(key)" style="cursor: pointer;" onmouseover="this.style.color='#7282C1';" onmouseout="this.style.color='#FFFFFF';">{{value.contact.name}}</div>
+								<div class="chat-meta">{{value.time}}</div>
+							</div>
+							<div class="chat-msg-text">{{value.message}}</div>
+							<div class="chat-notification {{data[key].classe}}">{{data[key].nbrMsgNonLu}}</div>
+						</div>
+					 </div>
+				</div>
 			</div>
 		</div>
 		
 		<!-- CHAT-CONTACT -->
-		<div id="contact" class="l-nav is-hidden">
+		<div id="contact" class="l-nav is-hidden" ng-controller="chatContactCtrl">
 			<div class="l-wrap-search js-search">
 				<div class="l-search">
 					<form>
-						<label id="btn-search-contact" class="l-left button-search th-grey" title="recherche"><span class="glyphicon glyphicon-search"></span></label>
-						<input id="input-contact" class="l-left input-search" type="text" name="" placeholder="Rechercher un contact">
+						<label class="l-left button-search th-grey" title="recherche" ng-click="find(search)"><span class="glyphicon glyphicon-search"></span></label>
+						<input class="l-left input-search" type="text" placeholder="Rechercher un contact" ng-model="search">
 					</form>
 				</div>
 			</div>
 			<div id="chat-contact" class="l-wrap-nav-chat js-search-result">
+				<div class="l-wrap-chat" ng-show="error">
+					<div class="chat-msg-error">{{msgError}}</div>
+				</div>
+				<!-- ng-repeat -->
+				<div ng-repeat="(key, value) in data">
+					<div class="l-wrap-chat"> 
+						<div class="l-wrap-chat-avatar">
+							<div class="avatar-mini {{value.avatarClass}}" style="background-image: url({{value.avatarPath}});"></div>
+						</div>
+						<div class="chat-body">
+							<div class="chat-main"">
+								<div class="chat-title"  ng-click="select(key)" style="cursor: pointer;" onmouseover="this.style.color='#7282C1';" onmouseout="this.style.color='#FFFFFF';">{{value.name}}</div>
+							</div>
+						</div>
+					 </div>
+				</div>
 			</div>
 		</div>
 		
 		<!-- CHAT-NEW-CONTACT -->
-		<div id="new-contact" class="l-nav" ng-controller="chatNewContact">
+		<div id="new-contact" class="l-nav is-hidden" ng-controller="chatNewContact">
 			<div class="l-wrap-search js-search">
 				<div class="l-search">
 					<form>
@@ -79,22 +114,29 @@
 
 	</div>
 	<div class="l-home-wrap-right">
-		<!-- SCREEN-DISCUSSION -->
-		<div class="l-wrap-header-home" ng-controller="screenDiscussionCtrl" ng-hide="isHidden">
+		<!-- HEADER-DISCUSSION -->
+		<div class="l-wrap-header-home" ng-controller="headerDiscussionCtrl" ng-hide="isHidden">
 			<div id="avatar-contact" class="l-wrap-header-avatar">
+				<div class="avatar-mini {{avatarClass}}" style="background-image: url({{avatarPath}});"></div>
 			</div>
-			<div>
+			<!-- <div>
 				<div class="l-right button-icon th-grey" title="menu">
 					<i class="glyphicon glyphicon-option-vertical"></i>
 				</div>
+			</div> -->
+		</div>
+		<!-- SCREEN-DISCUSSION -->
+		<div id="js-wrap-screen" class="l-wrap-msg-screen"  ng-controller="screenDiscussionCtrl" ng-hide="isHidden">
+			<div id="js-screen" class="l-wrap-msg">
 			</div>
 		</div>
-		<div class="l-wrap-msg-screen">
-			<div class="l-wrap-msg">
+		<!-- FOOTER-DISCUSSION -->
+		<footer class="user-footer-home" ng-controller="inputDiscussionCtrl" ng-hide="isHidden">
+			<div class="l-wrap-send-msg">
+				<div class="l-msg">
+					<textarea class="input-msg my-message" placeholder="{{placeholder}}" ng-model="message"></textarea>
+				</div>
 			</div>
-		</div>
-		<!-- <?php
-			require_once $footer;
-		?> -->
+		</footer>
 	</div>
 </div>

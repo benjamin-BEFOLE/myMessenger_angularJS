@@ -13,6 +13,14 @@ var appModule = angular.module(
 	'discussion'
 ]);
 
+/**
+*  Définition constantes globales
+*
+*/
+appModule.constant('SERVER_URL', 'http://localhost:6060/');
+appModule.constant('API_URL', 'http://localhost:6060/api/v0/');
+appModule.constant('AVATAR_URL', 'http://localhost:6060/img/avatar/'); 
+
 
 /**
 *  Module 'user'
@@ -48,12 +56,5 @@ var discussionModule = angular.module(
 	// Dépendances
 	['ngStorage'
 ]);
-
-
-/**
-*  Définition de quelques constantes
-*
-*/
-userModule.constant('API_URL', 'http://localhost:6060/api/v0/');
-userModule.constant('AVATAR_URL', 'http://localhost:6060/img/avatar/');  
+ 
 

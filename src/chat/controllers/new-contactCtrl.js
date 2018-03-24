@@ -63,7 +63,7 @@ chatModule.controller('chatNewContact', ['$scope', '$sessionStorage', 'serviceCh
 
 		// EVENEMENT: saisi d'une recherche
 		$scope.$watch('search', function (value) {
-			if(value == '') {
+			if (value == '') {
 				$scope.error = true;
 				$scope.data = [];
 				$scope.msgError = 'Saisir une recherche';
