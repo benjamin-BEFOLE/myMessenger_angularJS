@@ -73,8 +73,10 @@ chatModule.controller('chatDiscussionCtrl',
 		// Ecouteurs d'événements
 		$scope.$on('notification', function (event, dataMsg, incr) {
 			var time = new Date();
+			var found = false;
 			$scope.data.forEach(function (elm) {
 				if (elm.contact.id == dataMsg.receiver_id || elm.contact.id == dataMsg.emitter_id) {
+					found = true;
 					time.setTime(dataMsg.date);
 					elm.message = dataMsg.message.replace(/<br>/g, '\n');
 					elm.date = dataMsg.date;
@@ -85,7 +87,15 @@ chatModule.controller('chatDiscussionCtrl',
 					}
 				}
 			})
-			if (dataMsg.receiver_id == id)
+
+			if (!found) 
+				$scope.find($scope.search);
+
+			if (dataMsg.receiver_id == id && found) {
+				$scope.data = $scope.data.sort(function (a, b) {
+															return b.date - a.date;
+						});
 				$scope.$digest();
+			}
 		})
 }])
