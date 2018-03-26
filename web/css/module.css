@@ -5,6 +5,8 @@
 	padding: 7px 13px;
 	border-radius: 4px;
 	border: none;
+	-webkit-transition: color 0.3s ease-out;
+	-o-transition: color 0.3s ease-out;
 	transition: color 0.3s ease-out;
 }
 
@@ -21,6 +23,8 @@
 	line-height: 50px;
 	text-align: center;
 	cursor: pointer;
+	-webkit-transition: color 0.3s ease-out;
+	-o-transition: color 0.3s ease-out;
 	transition: color 0.3s ease-out;
 }
 
@@ -43,6 +47,8 @@
 	border-radius: 15px;
 	font-size: 20px;
 	text-align: center;
+	-webkit-transition: color 0.3s ease-out, background-color 0.3s ease-out;
+	-o-transition: color 0.3s ease-out, background-color 0.3s ease-out;
 	transition: color 0.3s ease-out, background-color 0.3s ease-out;
 }
 
@@ -244,7 +250,8 @@
 		font-size: 18px;
 		color: white;
 		overflow: hidden;
-		text-overflow: ellipsis;
+		-o-text-overflow: ellipsis;
+		   text-overflow: ellipsis;
 	}
 
 	.chat-meta {
@@ -263,7 +270,8 @@
 		font-size: 16px;
 		color: #8F8F8E;
 		overflow: hidden;
-		text-overflow: ellipsis;
+		-o-text-overflow: ellipsis;
+		   text-overflow: ellipsis;
 	}
 
 	.chat-notification {
@@ -289,6 +297,8 @@
 		font-size: 20px;
 		color: #8F8F8E;
 		text-align: center;
+		-webkit-transition: color 0.3s ease-out;
+		-o-transition: color 0.3s ease-out;
 		transition: color 0.3s ease-out;
 		cursor: pointer;
 	}
