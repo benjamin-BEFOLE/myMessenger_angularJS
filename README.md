@@ -5,6 +5,9 @@ Développer la vue d'une application web, avec AngularJS,  permettant à ses uti
 
 Installation
 =================
-Installer les différents modules avec la commande :	*npm install* 
+Installer les différents modules avec la commande :	
+```
+npm install
+```
 
 
